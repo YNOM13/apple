@@ -1,0 +1,264 @@
+@import "null.scss";/*Імпорт файла до scss*/
+
+body{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+padding: 40px;
+background: rgb(245, 185, 185);
+}
+
+/*.block{
+	font-size: 24px;
+	line-height: 40px;
+	border: 1px solid black;
+	padding: 20px;
+	letter-spacing: 2px;
+		.blocktext{
+			color: rgb(136, 255, 0);	
+			text-shadow: 1px 1px 1px black;
+			>p{
+				color: green;
+				span{
+					color: black;
+				}
+			}
+			span{
+					color: rgb(255, 255, 255);
+					text-shadow: 1px 1px 1px black;
+				}
+		}
+}*/
+/*
+.block{
+	padding: 30px;
+	font-size: 24px;
+	line-height: 30px;
+	border: 1px solid black;
+	>p{//перший рівень
+		color: red;
+	}
+	.blocktext{
+		font-size: 18px;
+		>p{//другий рівень
+			color: rgb(19, 112, 104);
+		}
+		>span{
+			color: green;
+		}
+		
+	}
+}
+*/
+/*
+.block{
+	padding: 30px;
+	line-height: 30px;
+	border: 1px solid black;
+	border-radius: 40px;
+	
+	&.blockbig{
+	border: 1px solid black;	
+	color: rgb(255, 70, 70);
+	}
+	>a{
+		font-size: 15px;
+		color: black;
+		&::before{
+			content: '';
+			display: inline-block;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			border: 1px solid black;
+			background: green;
+			margin: 0px 4px -1px 0;
+		}
+		&:hover::before{
+			background: rgb(0, 245, 233);
+		}
+		&:hover{
+			color: rgb(4, 48, 245);
+			
+		}
+	}		
+}*/
+/*
+.block{
+	padding: 30px;
+	line-height: 30px;
+	border: 1px solid black;
+	border-radius: 40px;
+}
+.link{
+	color: black;
+	&:hover{
+		color: aqua;
+		text-decoration: underline dashed black 1px;
+		text-transform: uppercase;
+	}
+	.block &{
+		font-size: 40px; //використання штуки (і) для виклику певної силки в блоці, тобюто буде визвана саме вона, а інші бдуть взаємодіяти з встановленими значеннями
+	}
+}*/
+/*
+$ta:center;
+$fz:20px;//розміри і тд(імба)
+$s:red;
+.block{
+	>p{
+		color: $s;
+		text-align:$ta;
+		font-size: $fz;
+	}
+}
+*/
+//створюємо певний шаблон
+/*$sd:rgb(14, 151, 44);
+%fl{
+	border-bottom:1px dashed darkblue ;
+	color: red;
+	
+}
+
+.block{
+
+	>a{
+		@extend %fl;
+	}
+	.block2{
+		>a{
+			color: $sd;
+		}
+	}
+}*/
+//Міксини @mixin
+/*
+@mixin baba($f) {
+	font-size:$f;
+}
+.block{
+	color: red;
+	.mis{
+		@include baba(50px)
+	}
+}*/
+
+%lol{
+	color: red;
+	font-size: 24px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-style: italic;
+}
+$fs:red;
+
+
+.drop{
+	display: block;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	box-shadow:  inset 10px 10px 40px rgba(0, 0, 0, 0.5), 
+	15px 25px 10px rgba(0, 0, 0, 0.5),
+	15px 20px 40px rgba(0, 0, 0, 0.5),
+	inset -10px -10px 15px rgba(255, 255, 255, 0.9),
+	;
+	margin: auto;
+	margin-top: 90px;
+	border-radius:50% ;
+	&::before{
+		content: '';
+		position: absolute;
+		top:35px;
+		left: 20px;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		box-shadow: 6px 1px 1px rgba(0, 0, 0, 0.2),inset -8px -5px 6px rgba(255, 255, 255, 0.6);
+		
+	}
+	&::after{
+		content: '';
+		position: absolute;
+		top:22px;
+		left: 45px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;	
+		display: inline-block;
+		box-shadow:  inset 1px 1px 3px rgba(0, 0, 0, 0.2), 
+	5px 1px 1px rgba(0, 0, 0, 0.3),
+	15px 20px 40px rgba(0, 0, 0, 0.5),
+	inset -4px -4px 4px rgba(255, 255, 255, 0.9);
+	opacity: 50%;
+	}
+	.apple{
+		width: 70px;
+		height: 70px;
+		position: absolute;
+		top:35px;
+		left:38px;
+		z-index: -1;
+		font-weight: bold;
+		color: rgb(99, 97, 97);
+		
+	}
+}
+.sd{
+	display: block;
+	color: black;
+	font-size: 30px;
+	border: 2px solid black;
+	margin: auto;
+	text-align: center;
+	width: 200px;
+	height: 44px;
+	padding: 3px;
+	margin-top: 80px;
+	border-radius: 100px;
+	background: rgb(212, 97, 132);
+	font-family: 'Shizuru', cursive;
+	transition: 0.7s;
+	box-shadow: 1px 1px 5px black;
+	&:hover{
+		background: rgb(147, 131, 158);
+		width: 250px;
+		box-shadow: 1px 1px 10px black;
+		
+	}
+	&:active{
+		width: 290px;
+		background-color: rgb(110, 76, 76);
+		box-shadow: 1px 1px 20px black;
+	}
+}
+h1{
+	text-align: center;
+	font-size: 40px;
+	color: black;
+	font-family: 'Courier New', Courier, monospace;
+	margin-top: 30px;
+}
+.peshka{
+	color: black;
+	text-align: center;
+	opacity: 70%;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+	max-width: 500px;
+	margin: auto;
+	margin-top: 180px;
+	letter-spacing: 2px;
+	line-height: 24px;
+	span{
+		font-weight: bold;
+		display: inline-block;
+		margin-top: 5px;
+	}	
+}
+.copyright{
+	color: black;
+	font-size: 13px;
+	opacity: 50%;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	margin-top: 120px;
+	font-weight: bold;
+}
